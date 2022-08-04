@@ -19,6 +19,7 @@ public class AlbumResource {
 }
 @PostMapping("/album")
     public  Album saveAlbum(@RequestBody Album album){
+
     return AlbumService.saveAlbum(album);
 }
 
@@ -26,11 +27,16 @@ public class AlbumResource {
     public List<Album> GetAllAlbums(){
     return AlbumService.getAllAlbums();
 }
-@GetMapping("/album/{albumId}")
-    public Album getAlbumById(@PathVariable("albumId") int albumId){
-    return albumService.getAlbumById(albumId);
-}
 
+    @GetMapping("/album/{albumId}")
+    public Album getAlbumById(@PathVariable("albumId") int albumId){
+        return albumService.getAlbumById(albumId);
+    }
+
+    @PutMapping("/album/{albumId}")
+    public Album updateAlbum(@PathVariable("albumId") int albumId, @RequestBody Album album){
+        return albumService.updateAlbum(albumId, album);
+    }
 }
 
 

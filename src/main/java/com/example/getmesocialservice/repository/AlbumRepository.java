@@ -32,4 +32,17 @@ public class AlbumRepository {
         }
         return null;
     }
+
+    public Album updateAlbum(int albumId, Album album) {
+        for(Album a:albumList){
+            if(a.getAlbumId() == albumId){
+                a.setName(album.getName());
+                a.setAlbumId(album.getAlbumId());
+                a.setDescription(album.getDescription());
+                a.setCoverPicUrl(album.getCoverPicUrl());
+                return a;
+            }
+        }
+        return null;
+    }
 }
