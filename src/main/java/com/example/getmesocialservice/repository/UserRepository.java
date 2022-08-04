@@ -11,7 +11,7 @@ import java.util.List;
 public class UserRepository {
     List<User> userList = new ArrayList<>();
     public User getUser(){
-        User user = new User("Sanaz","Canada",22,"http://www.mypicurl");
+        User user = new User("sanaz","Canada",22,"http://localhost:8080/api/user");
         return user;
     }
 
