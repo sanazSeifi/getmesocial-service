@@ -10,6 +10,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class AlbumResource {
+    public AlbumResource(){
+        albumService=new AlbumService();
+    }
 @Autowired
     private AlbumService albumService;
 
@@ -18,14 +21,19 @@ public class AlbumResource {
     return albumService.getAlbum();
 }
 @PostMapping("/album")
-    public  Album saveAlbum(@RequestBody Album album){
+    public Album saveAlbum(@RequestBody Album album){
 
-    return AlbumService.saveAlbum(album);
+    return albumService.saveAlbum(album);
 }
+    @PostMapping("/AllAlbum")
+    public List<Album> AllAlbum(@RequestBody Album album){
+
+        return albumService.getAllAlbums();
+    }
 
 @GetMapping("/allAlbums")
     public List<Album> GetAllAlbums(){
-    return AlbumService.getAllAlbums();
+    return albumService.getAllAlbums();
 }
 
     @GetMapping("/album/{albumId}")
@@ -37,6 +45,13 @@ public class AlbumResource {
     public Album updateAlbum(@PathVariable("albumId") int albumId, @RequestBody Album album){
         return albumService.updateAlbum(albumId, album);
     }
+
+    @DeleteMapping("/album")
+    public  Album deleteAlbum(@RequestParam(name = "albumId") int albumId){
+    return  albumService.deleteAlbum(albumId);
+    }
+
+
 }
 
 

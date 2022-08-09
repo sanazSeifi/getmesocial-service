@@ -7,7 +7,7 @@ public class Album {
     private  String coverPicUrl;
 
 public Album(int albumId, String name, String description, String coverPicUrl){
-    this.albumId = albumId;
+//    this.albumId = albumId;
     this.name = name;
     this.description = description;
     this.coverPicUrl = coverPicUrl;
@@ -17,8 +17,9 @@ public Album(int albumId, String name, String description, String coverPicUrl){
         return albumId;
     }
 
-    public void setAlbumId(int albumId) {
+    public int setAlbumId(int albumId) {
         this.albumId = albumId;
+        return 2;
     }
 
     public String getName() {
