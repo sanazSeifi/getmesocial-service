@@ -1,6 +1,10 @@
 package com.example.getmesocialservice.model;
 
+import nonapi.io.github.classgraph.json.Id;
+
 public class Album {
+
+    @Id
     private String id;
     private String name;
     private String coverPhotoUrl;
