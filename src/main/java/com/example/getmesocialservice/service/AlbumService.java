@@ -4,8 +4,9 @@ import com.example.getmesocialservice.model.Album;
 import com.example.getmesocialservice.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
+import java.util.List;
+@Service
 public class AlbumService {
 //    private AlbumRepository almrepo;
 //    public AlbumService(){

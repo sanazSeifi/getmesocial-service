@@ -13,7 +13,7 @@ public class AlbumResource {
 //    public AlbumResource(){
 //        albumService=new AlbumService();
 //    }
-@Autowired
+    @Autowired
     private AlbumService albumService;
     @PostMapping("/album")
     public Album saveAlbum(@RequestBody Album album){
