@@ -14,9 +14,9 @@ public class Album {
 public Album(String id, String name, String description, String coverPicUrl){
     this.id = id;
     this.name = name;
-    this.coverPhotoUrl = coverPhotoUrl;
-    this.createdBy = createdBy;
-    this.dataCreated = dataCreated;
+//    this.coverPhotoUrl = coverPhotoUrl;
+//    this.createdBy = createdBy;
+//    this.dataCreated = dataCreated;
 }
 
     public String getId() {
