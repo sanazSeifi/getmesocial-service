@@ -1,7 +1,7 @@
 package com.example.getmesocialservice.service;
 
 import com.example.getmesocialservice.model.Album;
-import com.example.getmesocialservice.repository.AlbumRepository;
+import com.example.getmesocialservice.repository.AlbumRepositoryClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ public class AlbumService {
 //        return almrepo.getAlbum();
 //    }
     @Autowired
-    private AlbumRepository albumRepository;
+    private AlbumRepositoryClass albumRepository;
     public Album saveAlbum(Album album){
         return albumRepository.save(album);
     }
