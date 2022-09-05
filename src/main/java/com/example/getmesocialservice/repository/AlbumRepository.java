@@ -11,7 +11,7 @@ public class AlbumRepository {
     List<Album> albumList = new ArrayList<>();
 
     public Album getAlbum() {
-        Album album = new Album(1, "Family Photos", "2022 category", "https://sanaz.git.com");
+        Album album = new Album(1, "Recent Photos", "All photos within one month", "https://avatars.githubusercontent.com/u/11277764?v=4");
         return album;
     }
 
@@ -57,4 +57,3 @@ public class AlbumRepository {
         return null;
     }
 }
-
