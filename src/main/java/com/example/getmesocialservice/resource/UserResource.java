@@ -12,12 +12,10 @@ public class UserResource {
     private UserService userService;
 
     @GetMapping("/user")
-    public User getUser(){
+    public User getUser() {
         return userService.getUser();
+
     }
 
-    @PostMapping("/user")
-    public User saveUser(@RequestBody User user){
-        return userService.saveUser(user);
-    }
+
 }

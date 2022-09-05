@@ -1,30 +1,28 @@
 package com.example.getmesocialservice.model;
 
-import nonapi.io.github.classgraph.json.Id;
-
 public class Album {
-
-    @Id
-    private String id;
+    private int albumId;
     private String name;
-    private String coverPhotoUrl;
-    private  String createdBy;
-    private String dataCreated;
+    private String description;
+    private String coverPicUrl;
 
-public Album(String id, String name, String description, String coverPicUrl){
-    this.id = id;
-    this.name = name;
-//    this.coverPhotoUrl = coverPhotoUrl;
-//    this.createdBy = createdBy;
-//    this.dataCreated = dataCreated;
-}
-
-    public String getId() {
-        return id;
+    public Album() {
+        super();
     }
 
-    public void setId(String id) {
-        id = id;
+    public Album(int albumId, String name, String description, String coverPicUrl) {
+        this.albumId = albumId;
+        this.name = name;
+        this.description = description;
+        this.coverPicUrl = coverPicUrl;
+    }
+
+    public int getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(int albumId) {
+        this.albumId = albumId;
     }
 
     public String getName() {
@@ -35,27 +33,19 @@ public Album(String id, String name, String description, String coverPicUrl){
         this.name = name;
     }
 
-    public String getCoverPhotoUrl() {
-        return coverPhotoUrl;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCoverPhotoUrl(String coverPhotoUrl) {
-        this.coverPhotoUrl = coverPhotoUrl;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
+    public String getCoverPicUrl() {
+        return coverPicUrl;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getDataCreated() {
-        return dataCreated;
-    }
-
-    public void setDataCreated(String dataCreated) {
-        this.dataCreated = dataCreated;
+    public void setCoverPicUrl(String coverPicUrl) {
+        this.coverPicUrl = coverPicUrl;
     }
 }

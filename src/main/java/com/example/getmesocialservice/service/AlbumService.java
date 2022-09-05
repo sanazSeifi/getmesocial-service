@@ -6,34 +6,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class AlbumService {
-//    private AlbumRepository almrepo;
-//    public AlbumService(){
-//        almrepo=new AlbumRepository();
-//    }
-//    public Album getAlbum(){
-
-//        return almrepo.getAlbum();
-//    }
     @Autowired
     private AlbumRepository albumRepository;
-    public Album saveAlbum(Album album){
-        return albumRepository.save(album);
+
+    public Album getAlbum() {
+        return albumRepository.getAlbum();
     }
-//    public  List<Album> getAllAlbums() {
-//        return  almrepo.getAllAlbums();
-//    }
 
-//    public Album getAlbumById(int albumId) {
-//        return albumRepository.getAlbumById(albumId);
-//    }
+    public Album createAlbum(Album album) {
+        return albumRepository.createAlbum(album);
+    }
 
-//    public Album updateAlbum(int albumId, Album album) {
-//      return albumRepository.updateAlbum(albumId, album);
-//    }
+    public List<Album> getAllAlbum() {
+        return albumRepository.getAllAlbum();
+    }
 
-//    public Album deleteAlbum(int albumId) {
-//        return albumRepository.deleteAlbum(albumId);
-//    }
+    public Album getSingleAlbum(int albumId) {
+        return albumRepository.getSingleAlbum(albumId);
+    }
+
+    public Album updateAlbum(int albumId, Album album) {
+        return albumRepository.updateAlbum(albumId, album);
+    }
+
+    public Album deleteAlbum(int albumId) {
+        return albumRepository.deleteAlbum(albumId);
+    }
 }
+

@@ -9,14 +9,10 @@ import java.util.List;
 
 @Repository
 public class UserRepository {
-    List<User> userList = new ArrayList<>();
-    public User getUser(){
-        User user = new User("sanaz","Canada",22,"http://localhost:8080/api/user");
+
+    public User getUser() {
+        User user = new User("Sanaz", "Toronto", 20, "https://sanaz.git.com");
         return user;
     }
 
-    public User saveUser(User user) {
-    userList.add(user);
-    return user;
-    }
 }
