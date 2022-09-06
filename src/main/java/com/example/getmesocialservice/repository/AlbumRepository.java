@@ -1,8 +1,8 @@
 package com.example.getmesocialservice.repository;
 
-
 import com.example.getmesocialservice.model.Album;
 import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,3 +57,4 @@ public class AlbumRepository {
         return null;
     }
 }
+

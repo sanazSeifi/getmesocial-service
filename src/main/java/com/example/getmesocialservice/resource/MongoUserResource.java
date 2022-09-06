@@ -1,29 +1,52 @@
 package com.example.getmesocialservice.resource;
 
-import com.example.getmesocialservice.model.Album;
-import com.example.getmesocialservice.service.AlbumService;
+
+import com.example.getmesocialservice.model.MongoUser;
+import com.example.getmesocialservice.service.MongoUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
-public class AlbumResource {
+@RequestMapping("/api/v1")
+public class MongoUserResource {
     @Autowired
-    private AlbumService albumService;
+    private MongoUserService mongoUserService;
 
+
+
+    @PostMapping("/user")
+    public MongoUser createUser(@RequestBody MongoUser mongoUser){
+        mongoUserService.createUser(mongoUser);
+        return mongoUser;
+    }
+    @GetMapping("/users")
+    public List<MongoUser> getAllUsers() {
+        return mongoUserService.getAllUsers();
+
+    }
+    @GetMapping("/user")
+    public Optional<MongoUser> getById(@RequestParam (name = "id") String userId) {
+        return mongoUserService.getById(userId);
+
+    }
+    @PutMapping("/user")
+    public MongoUser updateMongoUser(@RequestBody MongoUser mongoUser) {
+        return mongoUserService.updateMongoUser(mongoUser);
+
+    }
+    @DeleteMapping("/user")
+    public void deleteMongoUser(@RequestParam(name = "id") String userId) {
+        mongoUserService.deleteUser(userId);
+
+    }
+    /*
     @GetMapping("/album")
     public Album getAlbum() {
         return albumService.getAlbum();
 
-    }
-
-    @PostMapping("/album")
-    public Album createAlbum(@RequestBody Album album){
-        albumService.createAlbum(album);
-        return album;
     }
     @GetMapping("/albums")
     public List<Album> getAllAlbum() {
@@ -51,7 +74,7 @@ public class AlbumResource {
     public Album deleteAlbumWithParam(@RequestParam(name = "id") int albumId) {
         return albumService.deleteAlbum(albumId);
 
-    }
+    }*/
 
 
 }
